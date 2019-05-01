@@ -1,0 +1,38 @@
+.scrollContainer {
+  max-width: 1366px;
+  margin: 0 auto;
+  border: 5px solid red;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.openingText {
+  font-family: 'Libre Franklin', sans-serif;
+  margin: auto;
+  text-align: left;
+  max-width: 44rem;
+  z-index: 1;
+  animation: intro 6s ease-out 1s;
+  color: rgb(75, 213, 238);
+  font-weight: 400;
+  font-size: 300%;
+  opacity: 0;
+}
+
+@keyframes intro {
+  0% {
+      opacity: 0;
+  }
+  20% {
+      opacity: 1;
+  }
+  90% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}

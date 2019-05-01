@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
-import { cleanRandomMovie } from '../../helpers';
+import Scroll from "../Scroll/Scroll";
+import { cleanRandomMovie } from "../../helpers";
 import "./App.css";
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
     fetch(`https://swapi.co/api/films/${randomNum}/`)
       .then(response => response.json())
       .then(result => cleanRandomMovie(result))
-      .then(result => this.setState({randomMovie: { ...result }}));
+      .then(result => this.setState({ randomMovie: { ...result } }));
   }
 
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
           <div className="starfield-left" />
           <div className="starfield-right" />
         </div>
+        <Scroll randomMovie={this.state.randomMovie}/>
       </div>
     );
   }
