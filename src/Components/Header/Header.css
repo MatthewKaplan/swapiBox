@@ -34,22 +34,24 @@ input {
 }
 
 .people {
-  background-image: url('../../assets/star-wars-people.png');
-  background-size: 40px 40px;
-  background-position: 88% 50%;
+  /* ROBOT COLOR: #FFA300 */
+  background-image: url('../../assets/star-wars-people.svg');
+  background-size: 100px 100px;
+  background-position: 98% 50%;
   background-repeat: no-repeat;
 }
 
 .vehicles {
-  background-image: url('../../assets/star-wars.svg');
-  background-size: 40px 40px;
-  background-position: 88% 50%;
+  /* SPACE SHIP COLOR: #00A0FF */
+  background-image: url('../../assets/millennium-falcon.svg');
+  background-size: 100px 100px;
+  background-position: 98% 50%;
   background-repeat: no-repeat;
 }
 
 .planets {
   background-image: url('../../assets/world.svg');
-  background-size: 40px 40px;
-  background-position: 88% 50%;
+  background-size: 100px 100px;
+  background-position: 98% 50%;
   background-repeat: no-repeat;
 }
