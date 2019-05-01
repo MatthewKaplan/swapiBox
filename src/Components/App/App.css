@@ -1,33 +1,37 @@
 .App {
-  text-align: center;
+  /* background-color: #303030; */
+  /* height: 100vh; */
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.background-style {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  background-color: #151515;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.starfield-left {
+  position: absolute;
+  width: 400px;
+  height: 100%;
+  top: 0;
+  background-repeat: repeat-y;
+  left: 0;
+  background-position: left center;
+  background-size: 100% auto;
+  background-image: url(https://static-mh.content.disney.io/starwars/assets/background/bg_starsL-fd4661a3ccea.jpg);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.starfield-right {
+  position: absolute;
+  width: 400px;
+  height: 100%;
+  top: 0;
+  background-repeat: repeat-y;
+  right: 0;
+  background-position: right center;
+  background-size: auto 100%;
+  background-image: url(https://static-mh.content.disney.io/starwars/assets/background/bg_starsR-655c85e404d4.jpg);
 }
