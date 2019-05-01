@@ -22,6 +22,7 @@ class App extends Component {
   }
 
   render() {
+    const { randomMovie } = this.state;
     return (
       <div className="App">
         <Header />
@@ -29,7 +30,7 @@ class App extends Component {
           <div className="starfield-left" />
           <div className="starfield-right" />
         </div>
-        <Scroll movie={this.state.randomMovie}/>
+        <Scroll {...randomMovie} />
       </div>
     );
   }

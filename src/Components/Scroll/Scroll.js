@@ -1,7 +1,7 @@
 import React from "react";
 import "./Scroll.css";
 
-const Scroll = ({ movie }) => {
+const Scroll = ({ releaseDate, title, summary }) => {
   return (
     <section className="scrollContainer">
       <p className="openingText">
@@ -13,10 +13,10 @@ const Scroll = ({ movie }) => {
       </section>
       <div id="board">
         <div id="content">
-          <p id="title">{movie.releaseDate}</p>
-          <p id="subtitle">{movie.title}</p>
+          <p id="title">{releaseDate}</p>
+          <p id="subtitle">{title}</p>
           <br />
-          <p>{movie.summary}</p>
+          <p>{summary}</p>
         </div>
       </div>
     </section>
