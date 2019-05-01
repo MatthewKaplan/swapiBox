@@ -1,12 +1,12 @@
 import React from "react";
-import "./Header.css";
+import "./Header.scss";
 
 const Header = props => {
   return (
-    <header>
-      <div className="top-nav" />
+    <header className="headerContainer">
+      <div className="topNav" />
       <hr />
-      <div className="button-container">
+      <div className="buttonContainer">
         <input
           type="submit"
           className="people"

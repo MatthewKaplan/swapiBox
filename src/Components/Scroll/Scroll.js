@@ -1,5 +1,5 @@
 import React from "react";
-import "./Scroll.css";
+import "./Scroll.scss";
 
 const Scroll = ({ releaseDate, title, summary }) => {
   return (

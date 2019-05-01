@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../Header/Header";
 import Scroll from "../Scroll/Scroll";
 import { cleanRandomMovie } from "../../helpers";
-import "./App.css";
+import "./App.scss";
 
 class App extends Component {
   constructor() {
