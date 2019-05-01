@@ -29,7 +29,7 @@ class App extends Component {
           <div className="starfield-left" />
           <div className="starfield-right" />
         </div>
-        <Scroll randomMovie={this.state.randomMovie}/>
+        <Scroll movie={this.state.randomMovie}/>
       </div>
     );
   }
