@@ -21,11 +21,27 @@ class App extends Component {
       .then(result => this.setState({ randomMovie: { ...result } }));
   }
 
+  renderPeople = () => {
+    console.log("People");
+  };
+
+  renderVehicles = () => {
+    console.log("Vehicles");
+  };
+
+  renderPlanets = () => {
+    console.log("Planets");
+  };
+
   render() {
     const { randomMovie } = this.state;
     return (
       <div className="App">
-        <Header />
+        <Header
+          renderPeople={this.renderPeople}
+          renderPlanets={this.renderPlanets}
+          renderVehicles={this.renderVehicles}
+        />
         <div className="background-style">
           <div className="starfield-left" />
           <div className="starfield-right" />

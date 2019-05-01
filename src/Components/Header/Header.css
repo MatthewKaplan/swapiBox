@@ -18,6 +18,10 @@ header {
   margin: 0 250px 0 250px;
 }
 
+hr {
+  margin-bottom: 0;
+}
+
 input {
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
@@ -25,7 +29,7 @@ input {
   color: #aaa;
   background-color: #303030;
   cursor: pointer;
-  border-width: 1px 1px 0px 1px;
+  border-width: 0px 1px 0px 1px;
   border-color: #aaa;
   border-style: solid;
 }
@@ -38,7 +42,7 @@ input:focus {
   /* ROBOT COLOR: #FFA300 */
   background-image: url('../../assets/star-wars-people.svg');
   background-size: 100px 100px;
-  background-position: 98% 50%;
+  background-position: 100% 50%;
   background-repeat: no-repeat;
 }
 
@@ -46,7 +50,7 @@ input:focus {
   /* SPACE SHIP COLOR: #00A0FF */
   background-image: url('../../assets/millennium-falcon.svg');
   background-size: 100px 100px;
-  background-position: 98% 50%;
+  background-position: 100% 50%;
   background-repeat: no-repeat;
 }
 
