@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
 import Scroll from "../Scroll/Scroll";
+import CardContainer from "../CardContainer/CardContainer";
 import { cleanRandomMovie } from "../../helpers";
-import { fetchPeople, fetchVehicles, fetchPlanets } from "../../fetchAll";
+import { fetchPeople, fetchVehicles, fetchPlanets } from "../../fetch";
 import "./App.scss";
 
 class App extends Component {
@@ -33,10 +34,11 @@ class App extends Component {
   renderPlanets = () => {
     this.setState({ cardsToRender: fetchPlanets() });
   };
+  
+  // <CardContainer cardsToBeRendered={cardsToRender} />
 
   render() {
-    console.log(this.state)
-    const { randomMovie } = this.state;
+    const { randomMovie, cardsToRender } = this.state;
     return (
       <div className="App">
         <Header

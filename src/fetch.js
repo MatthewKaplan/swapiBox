@@ -1,4 +1,8 @@
-import { cleanPeopleData, cleanVehiclesData, cleanPlanetsData } from "./helpers";
+import {
+  cleanPeopleData,
+  cleanVehiclesData,
+  cleanPlanetsData
+} from "./helpers";
 
 const fetchPeople = () => {
   const url = "https://swapi.co/api/people/";
@@ -18,6 +22,7 @@ const fetchSpecies = people => {
       .then(response => response.json())
       .then(result => {
         const newPerson = { ...person, species: result.name };
+        console.log(newPerson)
         return newPerson;
       });
   });
@@ -51,7 +56,30 @@ const fetchPlanets = () => {
   const url = "https://swapi.co/api/planets/";
   return fetch(url)
     .then(response => response.json())
-    .then(results => console.log(results))
-}
+    .then(results => fetchResidentsInPlanets(results.results))
+    .then(names => cleanPlanetsData(names));
+  // ( ͡° ͜ʖ ͡°) I'll collect on this.
+};
+
+const fetchResidentsInPlanets = planets => {
+  const mapPlanets = planets.map(planet => {
+    return mapResidents(planet).then(residentData => ({
+      ...planet,
+      residents: residentData
+    }));
+  });
+  return Promise.all(mapPlanets);
+};
+
+const mapResidents = planet => {
+  const residentArray = planet.residents.map(resident => {
+    return fetchResidents(resident);
+  });
+  return Promise.all(residentArray);
+};
+
+const fetchResidents = resident => {
+  return fetch(resident).then(response => response.json());
+};
 
 export { fetchPeople, fetchVehicles, fetchPlanets };
