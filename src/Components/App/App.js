@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import Header from "../Header/Header";
 import Scroll from "../Scroll/Scroll";
 import { cleanRandomMovie } from "../../helpers";
+import { fetchPeople, fetchVehicles, fetchPlanets } from "../../fetchAll";
 import "./App.scss";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      cards: [],
+      cardsToRender: [],
       randomMovie: {}
     };
   }
@@ -22,18 +23,19 @@ class App extends Component {
   }
 
   renderPeople = () => {
-    console.log("People");
+    this.setState({ cardsToRender: fetchPeople() });
   };
 
   renderVehicles = () => {
-    console.log("Vehicles");
+    this.setState({ cardsToRender: fetchVehicles() });
   };
 
   renderPlanets = () => {
-    console.log("Planets");
+    this.setState({ cardsToRender: fetchPlanets() });
   };
 
   render() {
+    console.log(this.state)
     const { randomMovie } = this.state;
     return (
       <div className="App">
