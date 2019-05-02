@@ -33,7 +33,7 @@ const cleanVehiclesData = data => {
   return vehicleInfo;
 };
 
-const cleanPlanetsData = (data) => {
+const cleanPlanetsData = data => {
   const planetInfo = data.map(planet => {
     return {
       name: planet.name,
@@ -43,7 +43,13 @@ const cleanPlanetsData = (data) => {
       residents: planet.residents
     };
   });
+  console.log(planetInfo);
   return planetInfo;
 };
 
-export { cleanRandomMovie, cleanPeopleData, cleanVehiclesData, cleanPlanetsData };
+export {
+  cleanRandomMovie,
+  cleanPeopleData,
+  cleanVehiclesData,
+  cleanPlanetsData
+};
