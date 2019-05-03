@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../Header/Header";
 import Scroll from "../Scroll/Scroll";
 import CardContainer from "../CardContainer/CardContainer";
+import Loading from "../Loading/Loading";
 import { cleanRandomMovie } from "../../helpers";
 import { fetchPeople, fetchVehicles, fetchPlanets } from "../../fetch";
 import "./App.scss";
@@ -11,7 +12,8 @@ class App extends Component {
     super();
     this.state = {
       cardsToRender: [],
-      randomMovie: {}
+      randomMovie: {},
+      isLoading: false
     };
   }
 
@@ -34,7 +36,6 @@ class App extends Component {
   renderPlanets = () => {
     this.setState({ cardsToRender: fetchPlanets() });
   };
-  
   // <CardContainer cardsToBeRendered={cardsToRender} />
 
   render() {
@@ -46,6 +47,7 @@ class App extends Component {
           renderPlanets={this.renderPlanets}
           renderVehicles={this.renderVehicles}
         />
+        <Loading />
         <div className="background-style">
           <div className="starfield-left" />
           <div className="starfield-right" />

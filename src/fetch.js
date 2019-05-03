@@ -22,7 +22,7 @@ const fetchSpecies = people => {
       .then(response => response.json())
       .then(result => {
         const newPerson = { ...person, species: result.name };
-        console.log(newPerson)
+        console.log(newPerson);
         return newPerson;
       });
   });
@@ -58,7 +58,6 @@ const fetchPlanets = () => {
     .then(response => response.json())
     .then(results => fetchResidentsInPlanets(results.results))
     .then(names => cleanPlanetsData(names));
-  // ( ͡° ͜ʖ ͡°) I'll collect on this.
 };
 
 const fetchResidentsInPlanets = planets => {
