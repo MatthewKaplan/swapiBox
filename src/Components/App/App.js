@@ -25,34 +25,60 @@ class App extends Component {
       .then(result => this.setState({ randomMovie: { ...result } }));
   }
 
-  renderPeople = () => {
-    this.setState({ cardsToRender: fetchPeople() });
+  retrievePeople = () => {
+    this.setState({ isLoading: true });
+    fetchPeople().then(response =>
+      this.setState({ cardsToRender: response, isLoading: false })
+    );
   };
 
-  renderVehicles = () => {
-    this.setState({ cardsToRender: fetchVehicles() });
+  retrieveVehicles = () => {
+    this.setState({ isLoading: true });
+    fetchVehicles().then(response =>
+      this.setState({ cardsToRender: response, isLoading: false })
+    );
   };
 
-  renderPlanets = () => {
-    this.setState({ cardsToRender: fetchPlanets() });
+  retrievePlanets = () => {
+    this.setState({ isLoading: true });
+    fetchPlanets().then(response =>
+      this.setState({ cardsToRender: response, isLoading: false })
+    );
   };
-  // <CardContainer cardsToBeRendered={cardsToRender} />
+
+  handleCardRender() {
+    const { cardsToRender, isLoading } = this.state;
+    if (isLoading === true) {
+      return <Loading />;
+    } else {
+      return <CardContainer cardsToBeRendered={cardsToRender} />;
+    }
+  }
+
+  handleScrollRender() {
+    const { randomMovie, cardsToRender, isLoading } = this.state;
+    if (cardsToRender.length === 0 && isLoading === false) {
+      return <Scroll {...randomMovie} />;
+    }
+  }
 
   render() {
-    const { randomMovie, cardsToRender } = this.state;
+    console.log(this.state);
+    const { cardsToRender } = this.state;
+    console.log("cardsToRender", cardsToRender);
     return (
       <div className="App">
         <Header
-          renderPeople={this.renderPeople}
-          renderPlanets={this.renderPlanets}
-          renderVehicles={this.renderVehicles}
+          retrievePeople={this.retrievePeople}
+          retrievePlanets={this.retrievePlanets}
+          retrieveVehicles={this.retrieveVehicles}
         />
-        <Loading />
+        {this.handleScrollRender()}
+        {this.handleCardRender()}
         <div className="background-style">
           <div className="starfield-left" />
           <div className="starfield-right" />
         </div>
-        <Scroll {...randomMovie} />
       </div>
     );
   }

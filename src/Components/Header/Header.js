@@ -10,19 +10,19 @@ const Header = props => {
         <input
           type="submit"
           className="people"
-          onClick={props.renderPeople}
+          onClick={props.retrievePeople}
           value="PEOPLE"
         />
         <input
           type="submit"
           className="planets"
-          onClick={props.renderPlanets}
+          onClick={props.retrievePlanets}
           value="PLANETS"
         />
         <input
           type="submit"
           className="vehicles"
-          onClick={props.renderVehicles}
+          onClick={props.retrieveVehicles}
           value="VEHICLES"
         />
       </div>
