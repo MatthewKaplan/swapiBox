@@ -3,8 +3,8 @@ import Cards from "../Cards/Cards";
 import "./CardContainer.scss";
 
 const CardContainer = ({ cardsToBeRendered }) => {
-  console.log(cardsToBeRendered)
   const displayCards = cardsToBeRendered.map(cards => <Cards key={cards.name} {...cards} />);
+  console.log(displayCards);
 
   return (
     <div className='cardContainer'>
