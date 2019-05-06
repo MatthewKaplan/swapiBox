@@ -8,7 +8,7 @@ const cleanRandomMovie = data => {
 };
 
 const cleanPeopleData = data => {
-  const allPeople = data.map(person => {
+  const peopleInfo = data.map(person => {
     return {
       name: person.name,
       homeworld: person.homeworld,
@@ -16,8 +16,8 @@ const cleanPeopleData = data => {
       population: person.population
     };
   });
-  console.log(allPeople);
-  return allPeople;
+  console.log(peopleInfo);
+  return peopleInfo;
 };
 
 const cleanVehiclesData = data => {
@@ -29,7 +29,7 @@ const cleanVehiclesData = data => {
       passengers: vehicle.passengers
     };
   });
-  console.log(vehicleInfo);
+  console.log('vehicleInfo', vehicleInfo);
   return vehicleInfo;
 };
 
@@ -40,10 +40,10 @@ const cleanPlanetsData = data => {
       terrain: planet.terrain,
       climate: planet.climate,
       population: planet.population,
-      residents: planet.residents
+      residents: planet.residents.map(resident => resident.name)
     };
   });
-  console.log(planetInfo);
+  console.log('planetInfo', planetInfo);
   return planetInfo;
 };
 

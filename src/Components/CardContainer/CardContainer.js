@@ -4,7 +4,6 @@ import "./CardContainer.scss";
 
 const CardContainer = ({ cardsToBeRendered }) => {
   const displayCards = cardsToBeRendered.map(cards => <Cards key={cards.name} {...cards} />);
-  console.log(displayCards);
 
   return (
     <div className='cardContainer'>
