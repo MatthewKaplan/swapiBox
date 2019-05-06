@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Header.scss";
-import { fetchPeople, fetchVehicles, fetchPlanets } from "../../fetch";
+import { fetchPeople, fetchVehicles, fetchPlanets } from "../utils/fetch";
 import PropTypes from "prop-types";
 
 class Header extends Component {
@@ -25,18 +25,21 @@ class Header extends Component {
             className="people"
             onClick={() => this.handleClick("people")}
             value="PEOPLE"
+            data-test="people-button"
           />
           <input
             type="submit"
             className="planets"
             onClick={() => this.handleClick("planets")}
             value="PLANETS"
+            data-test="planets-button"
           />
           <input
             type="submit"
             className="vehicles"
             onClick={() => this.handleClick("vehicles")}
             value="VEHICLES"
+            data-test="vehicles-button"
           />
         </div>
       </header>

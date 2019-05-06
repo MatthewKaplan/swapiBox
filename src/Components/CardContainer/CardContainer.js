@@ -8,6 +8,7 @@ const CardContainer = ({ cardsToBeRendered }) => {
     <Cards key={cards.name} {...cards} />
   ));
 
+  
   return <div className="cardContainer">{displayCards}</div>;
 };
 

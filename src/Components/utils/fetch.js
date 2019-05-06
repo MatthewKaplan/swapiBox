@@ -1,13 +1,33 @@
 import {
   cleanPeopleData,
   cleanVehiclesData,
-  cleanPlanetsData
+  cleanPlanetsData,
+  cleanRandomMovie
 } from "./helpers";
+
+const fetchMovies = () => {
+  let randomNum = Math.floor(Math.random() * 7) + 1;
+  return fetch(`https://swapi.co/api/films/${randomNum}/`)
+    .then(response => {
+      if (!response.ok) {
+        throw Error("Error loading movies");
+      } else {
+        return response.json();
+      }
+    })
+    .then(result => cleanRandomMovie(result));
+};
 
 const fetchPeople = () => {
   const url = "https://swapi.co/api/people/";
   return fetch(url)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw Error("Error loading people");
+      } else {
+        return response.json();
+      }
+    })
     .then(data => fetchSpecies(data.results))
     .then(results => fetchHomeworld(results))
     .then(finalResults => cleanPeopleData(finalResults))
@@ -19,7 +39,13 @@ const fetchPeople = () => {
 const fetchSpecies = people => {
   const species = people.map(person => {
     return fetch(person.species)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw Error("Error loading species");
+        } else {
+          return response.json();
+        }
+      })
       .then(result => {
         const newPerson = { ...person, species: result.name };
         return newPerson;
@@ -36,10 +62,7 @@ const fetchHomeworld = people => {
         const finishedPerson = {
           ...person,
           homeworld: result.name,
-          population: result.population,
-          imageArr: [
-            "https://www.google.com/search?q=luke+skywalker+transparent&client=firefox-b-1-d&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiO8f7rnobiAhUB0KwKHUtTBOsQ_AUIDigB&biw=2560&bih=1343#imgrc=k2i_e8hLje5otM:"
-          ]
+          population: result.population
         };
         return finishedPerson;
       });
@@ -50,14 +73,26 @@ const fetchHomeworld = people => {
 const fetchVehicles = () => {
   const url = "https://swapi.co/api/starships/";
   return fetch(url)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw Error("Error loading vehicles");
+      } else {
+        return response.json();
+      }
+    })
     .then(results => cleanVehiclesData(results.results));
 };
 
 const fetchPlanets = () => {
   const url = "https://swapi.co/api/planets/";
   return fetch(url)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw Error("Error loading planets");
+      } else {
+        return response.json();
+      }
+    })
     .then(results => fetchResidentsInPlanets(results.results))
     .then(names => cleanPlanetsData(names));
 };
@@ -83,4 +118,4 @@ const fetchResidents = resident => {
   return fetch(resident).then(response => response.json());
 };
 
-export { fetchPeople, fetchVehicles, fetchPlanets };
+export { fetchPeople, fetchVehicles, fetchPlanets, fetchSpecies, fetchMovies };
