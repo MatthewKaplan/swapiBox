@@ -88,7 +88,7 @@ $scroll-text: hsl(60, 100%, 75%);
     position: absolute;
     text-align: justify;
     transform-origin: 50% 100%;
-    transform: perspective(300px) rotateX(15deg);
+    transform: perspective(300px) rotateX(25deg);
     width: 18em;
 
     &:after {

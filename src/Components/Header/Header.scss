@@ -40,23 +40,41 @@ $button-font: 'Ubuntu', sans-serif;
       font-family: $button-font;
       font-size: 1.05rem;
       text-align: center;
+
+      &:hover {
+        opacity: .7;
+      }
+
+      &:focus {
+        outline: none;
+      }
     }
   
     .people {
-      /* ROBOT COLOR: #FFA300 */
       @include icons;
-      background-image: url('../../assets/star-wars-people.svg');  
+      background-image: url('../../assets/star-wars-people.svg');
+
+      &:focus {
+        border-bottom: 3px solid #FFA300;
+      }
     }
   
     .vehicles {
-      /* SPACE SHIP COLOR: #00A0FF */
       @include icons;
       background-image: url('../../assets/millennium-falcon.svg');
+
+      &:focus {
+        border-bottom: 3px solid #00A0FF;
+      }
     }
   
     .planets {
       @include icons;
       background-image: url('../../assets/world.svg');
+
+      &:focus { 
+        border-bottom: 3px solid #80CA90;
+      }
     }
   } 
 }

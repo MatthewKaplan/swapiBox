@@ -15,7 +15,7 @@ const Cards = ({
   passengers
 }) => {
   const peopleCard = (
-    <article className="peopleCard card" key={name} style={{  backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")"}}>
+    <article className="peopleCard card" key={name}>
       <h2>{name}</h2>
       <h3>
         Homeworld: <span>{homeworld}</span>{" "}

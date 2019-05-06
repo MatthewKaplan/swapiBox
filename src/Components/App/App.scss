@@ -1,19 +1,9 @@
-@mixin stars {
-  background-repeat: repeat-y;
-  background-size: 100% auto;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 300px;
-}
-
 $primary-body: hsl(0, 0%, 8%);
 
 .App {
   background-image: url(http://donnastocktonhicks.com/wp-content/uploads/2019/04/star-wars-intro-star-wars-background-field-animated-motion-displaying-star-wars-intro-creator-online.jpg);
   background-color: $primary-body;
   height: 100%;
-  position: fixed;
   top: 0;
   width: 100%;
   z-index: -3;
