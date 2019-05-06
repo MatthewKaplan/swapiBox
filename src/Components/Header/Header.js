@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Header.scss";
 import { fetchPeople, fetchVehicles, fetchPlanets } from "../../fetch";
+import PropTypes from "prop-types";
 
 class Header extends Component {
   handleClick(value) {
@@ -44,3 +45,7 @@ class Header extends Component {
 }
 
 export default Header;
+
+Header.propTypes = {
+  retrieveData: PropTypes.func.isRequired
+};

@@ -1,7 +1,8 @@
-import React from 'react';
-import './Cards.scss';
+import React from "react";
+import "./Cards.scss";
+import PropTypes from "prop-types";
 
-const Card = ({
+const Cards = ({
   name,
   homeworld,
   species,
@@ -29,7 +30,7 @@ const Card = ({
       <h3>Terrain: {terrain}</h3>
       <h3>Climate: {climate}</h3>
       <h3>Population: {population}</h3>
-      <h3 className="residents">Residents: {residents}</h3>
+      <h3>Residents: {residents}</h3>
       <button className="favorites favorite-button">favorite</button>
     </article>
   );
@@ -53,4 +54,17 @@ const Card = ({
   }
 };
 
-export default Card;
+export default Cards;
+
+Cards.propTypes = {
+  name: PropTypes.string,
+  homeworld: PropTypes.string,
+  species: PropTypes.string,
+  population: PropTypes.string,
+  terrain: PropTypes.string,
+  climate: PropTypes.string,
+  residents: PropTypes.array,
+  model: PropTypes.string,
+  type: PropTypes.string,
+  passengers: PropTypes.string
+};

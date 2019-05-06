@@ -16,7 +16,6 @@ const cleanPeopleData = data => {
       population: person.population
     };
   });
-  console.log(peopleInfo);
   return peopleInfo;
 };
 
@@ -29,7 +28,6 @@ const cleanVehiclesData = data => {
       passengers: vehicle.passengers
     };
   });
-  console.log('vehicleInfo', vehicleInfo);
   return vehicleInfo;
 };
 
@@ -40,10 +38,9 @@ const cleanPlanetsData = data => {
       terrain: planet.terrain,
       climate: planet.climate,
       population: planet.population,
-      residents: planet.residents.map(resident => resident.name)
+      residents: planet.residents.map(resident => `${resident.name} ,`)
     };
   });
-  console.log('planetInfo', planetInfo);
   return planetInfo;
 };
 
