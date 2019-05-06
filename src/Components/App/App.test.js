@@ -26,7 +26,8 @@ describe("App", () => {
 
   it("should have a proper default state", () => {
     expect(wrapper.state()).toEqual({
-        cards: [],
+        cardsToRender: [],
+        isLoading: false,
         randomMovie: {}
       });
     });

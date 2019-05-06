@@ -26,7 +26,6 @@ const Cards = ({
       <h3>
         Population: <span>{population}</span>
       </h3>
-      <button className="favorite-btn">favorite</button>
     </article>
   );
 
@@ -45,7 +44,6 @@ const Cards = ({
       <h3>
         Residents: <span>{residents}</span>
       </h3>
-      <button className="favorite-btn">favorite</button>
     </article>
   );
 
@@ -61,7 +59,6 @@ const Cards = ({
       <h3>
         Number of passengers: <span>{passengers}</span>
       </h3>
-      <button className="favorite-btn">favorite</button>
     </article>
   );
 

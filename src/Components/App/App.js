@@ -3,18 +3,14 @@ import Header from "../Header/Header";
 import Scroll from "../Scroll/Scroll";
 import CardContainer from "../CardContainer/CardContainer";
 import Loading from "../Loading/Loading";
-import { cleanRandomMovie } from "../../helpers";
+import { fetchMovies } from "../utils/fetch";
 import "./App.scss";
 
 class App extends Component {
   state = { cardsToRender: [], randomMovie: {}, isLoading: false };
 
   componentDidMount() {
-    let randomNum = Math.floor(Math.random() * 7) + 1;
-    fetch(`https://swapi.co/api/films/${randomNum}/`)
-      .then(response => response.json())
-      .then(result => cleanRandomMovie(result))
-      .then(result => this.setState({ randomMovie: { ...result } }));
+    fetchMovies().then(result => this.setState({ randomMovie: { ...result } }));
   }
 
   retrieveData = toFetch => {
