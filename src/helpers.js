@@ -13,7 +13,7 @@ const cleanPeopleData = data => {
       name: person.name,
       homeworld: person.homeworld,
       species: person.species,
-      population: person.population
+      population: person.population.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     };
   });
   return peopleInfo;
@@ -25,7 +25,7 @@ const cleanVehiclesData = data => {
       name: vehicle.name,
       model: vehicle.model,
       starship_class: vehicle.starship_class,
-      passengers: vehicle.passengers
+      passengers: vehicle.passengers.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     };
   });
   return vehicleInfo;
@@ -37,8 +37,10 @@ const cleanPlanetsData = data => {
       name: planet.name,
       terrain: planet.terrain,
       climate: planet.climate,
-      population: planet.population,
-      residents: planet.residents.map(resident => `${resident.name} ,`)
+      population: planet.population.replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      residents: planet.residents.map((resident, index) => {
+        return (index ? ", " : "") + resident.name;
+      })
     };
   });
   return planetInfo;
