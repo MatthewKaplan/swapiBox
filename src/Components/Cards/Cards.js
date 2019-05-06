@@ -15,11 +15,17 @@ const Cards = ({
   passengers
 }) => {
   const peopleCard = (
-    <article className="peopleCard card" key={name}>
+    <article className="peopleCard card" key={name} style={{  backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")"}}>
       <h2>{name}</h2>
-      <h3>Homeworld: {homeworld}</h3>
-      <h3>Species: {species}</h3>
-      <h3>Population: {population}</h3>
+      <h3>
+        Homeworld: <span>{homeworld}</span>{" "}
+      </h3>
+      <h3>
+        Species: <span>{species}</span>
+      </h3>
+      <h3>
+        Population: <span>{population}</span>
+      </h3>
       <button className="favorite-btn">favorite</button>
     </article>
   );
@@ -27,10 +33,18 @@ const Cards = ({
   const planetCard = (
     <article className="planetCard card" key={name}>
       <h2>{name}</h2>
-      <h3>Terrain: {terrain}</h3>
-      <h3>Climate: {climate}</h3>
-      <h3>Population: {population}</h3>
-      <h3>Residents: {residents}</h3>
+      <h3>
+        Terrain: <span>{terrain}</span>
+      </h3>
+      <h3>
+        Climate: <span>{climate}</span>
+      </h3>
+      <h3>
+        Population: <span>{population}</span>
+      </h3>
+      <h3>
+        Residents: <span>{residents}</span>
+      </h3>
       <button className="favorite-btn">favorite</button>
     </article>
   );
@@ -38,9 +52,15 @@ const Cards = ({
   const vehicleCard = (
     <article className="vehicleCard card" key={name}>
       <h2>{name}</h2>
-      <h3>Model: {model}</h3>
-      <h3>Class: {starship_class}</h3>
-      <h3>Number of passengers: {passengers}</h3>
+      <h3>
+        Model: <span>{model}</span>
+      </h3>
+      <h3>
+        Class: <span>{starship_class}</span>
+      </h3>
+      <h3>
+        Number of passengers: <span>{passengers}</span>
+      </h3>
       <button className="favorite-btn">favorite</button>
     </article>
   );

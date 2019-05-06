@@ -9,25 +9,12 @@
 
 $primary-body: hsl(0, 0%, 8%);
 
-.background-style {
+.App {
+  background-image: url(http://donnastocktonhicks.com/wp-content/uploads/2019/04/star-wars-intro-star-wars-background-field-animated-motion-displaying-star-wars-intro-creator-online.jpg);
   background-color: $primary-body;
   height: 100%;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: -3;
-
-  .starfield-left {
-    @include stars;
-    background-image: url(https://static-mh.content.disney.io/starwars/assets/background/bg_starsL-fd4661a3ccea.jpg);
-    background-position: left center;
-    left: 0;
-  }
-
-  .starfield-right {
-    @include stars;
-    background-image: url(https://static-mh.content.disney.io/starwars/assets/background/bg_starsR-655c85e404d4.jpg);
-    background-position: right center;
-    right: 0;
-  }
 }
