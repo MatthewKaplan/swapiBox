@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Start_Page](https://i.imgur.com/HrbDyGZ.png)
+![Continue_Page](https://i.imgur.com/AV10KPT.png)
+![Flash_Cards](https://i.imgur.com/r9VqaAc.png)
+![Final_Screen](https://i.imgur.com/zb5iF8C.png)
 
 ## Available Scripts
 
