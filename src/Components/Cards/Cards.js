@@ -16,9 +16,9 @@ const Card = ({
   const peopleCard = (
     <article className="peopleCard card" key={name}>
       <h2>{name}</h2>
-      <h3>homeworld: {homeworld}</h3>
-      <h3>species: {species}</h3>
-      <h3>population: {population}</h3>
+      <h3>Homeworld: {homeworld}</h3>
+      <h3>Species: {species}</h3>
+      <h3>Population: {population}</h3>
       <button className="favorites favorite-button">favorite</button>
     </article>
   );
@@ -26,10 +26,10 @@ const Card = ({
   const planetCard = (
     <article className="planetCard card" key={name}>
       <h2>{name}</h2>
-      <h3>terrain: {terrain}</h3>
-      <h3>climate: {climate}</h3>
-      <h3>population: {population}</h3>
-      <h3 className="residents">residents: {residents}</h3>
+      <h3>Terrain: {terrain}</h3>
+      <h3>Climate: {climate}</h3>
+      <h3>Population: {population}</h3>
+      <h3 className="residents">Residents: {residents}</h3>
       <button className="favorites favorite-button">favorite</button>
     </article>
   );
@@ -37,9 +37,9 @@ const Card = ({
   const vehicleCard = (
     <article className="vehicleCard card" key={name}>
       <h2>{name}</h2>
-      <h3>model: {model}</h3>
-      <h3>class: {starship_class}</h3>
-      <h3># of passengers: {passengers}</h3>
+      <h3>Model: {model}</h3>
+      <h3>Class: {starship_class}</h3>
+      <h3>Number of passengers: {passengers}</h3>
       <button className="favorites favorite-button">favorite</button>
     </article>
   );

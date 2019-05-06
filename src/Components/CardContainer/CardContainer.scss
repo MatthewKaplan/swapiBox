@@ -1,0 +1,9 @@
+.cardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 50px 375px;
+  width: 70%;
+  justify-content: center;
+  grid-gap: 35px;
+  text-align: center;
+}

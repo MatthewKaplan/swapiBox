@@ -4,18 +4,10 @@ import Scroll from "../Scroll/Scroll";
 import CardContainer from "../CardContainer/CardContainer";
 import Loading from "../Loading/Loading";
 import { cleanRandomMovie } from "../../helpers";
-import { fetchPeople, fetchVehicles, fetchPlanets } from "../../fetch";
 import "./App.scss";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      cardsToRender: [],
-      randomMovie: {},
-      isLoading: false
-    };
-  }
+  state = { cardsToRender: [], randomMovie: {}, isLoading: false };
 
   componentDidMount() {
     let randomNum = Math.floor(Math.random() * 7) + 1;
@@ -25,23 +17,9 @@ class App extends Component {
       .then(result => this.setState({ randomMovie: { ...result } }));
   }
 
-  retrievePeople = () => {
+  retrieveData = toFetch => {
     this.setState({ isLoading: true });
-    fetchPeople().then(response =>
-      this.setState({ cardsToRender: response, isLoading: false })
-    );
-  };
-
-  retrieveVehicles = () => {
-    this.setState({ isLoading: true });
-    fetchVehicles().then(response =>
-      this.setState({ cardsToRender: response, isLoading: false })
-    );
-  };
-
-  retrievePlanets = () => {
-    this.setState({ isLoading: true });
-    fetchPlanets().then(response =>
+    toFetch().then(response =>
       this.setState({ cardsToRender: response, isLoading: false })
     );
   };
@@ -63,15 +41,10 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
-    const { cardsToRender } = this.state;
-    console.log("cardsToRender", cardsToRender);
     return (
       <div className="App">
         <Header
-          retrievePeople={this.retrievePeople}
-          retrievePlanets={this.retrievePlanets}
-          retrieveVehicles={this.retrieveVehicles}
+          retrieveData={this.retrieveData}
         />
         {this.handleScrollRender()}
         {this.handleCardRender()}

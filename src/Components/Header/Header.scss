@@ -40,16 +40,12 @@ $button-font: 'Ubuntu', sans-serif;
       font-family: $button-font;
       font-size: 1.05rem;
       text-align: center;
-
-      &:focus {
-        outline: none;
-      }
     }
   
     .people {
       /* ROBOT COLOR: #FFA300 */
       @include icons;
-      background-image: url('../../assets/star-wars-people.svg');
+      background-image: url('../../assets/star-wars-people.svg');  
     }
   
     .vehicles {
