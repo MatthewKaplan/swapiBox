@@ -20,7 +20,7 @@ const Cards = ({
       <h3>Homeworld: {homeworld}</h3>
       <h3>Species: {species}</h3>
       <h3>Population: {population}</h3>
-      <button className="favorites favorite-button">favorite</button>
+      <button className="favorite-btn">favorite</button>
     </article>
   );
 
@@ -31,7 +31,7 @@ const Cards = ({
       <h3>Climate: {climate}</h3>
       <h3>Population: {population}</h3>
       <h3>Residents: {residents}</h3>
-      <button className="favorites favorite-button">favorite</button>
+      <button className="favorite-btn">favorite</button>
     </article>
   );
 
@@ -41,7 +41,7 @@ const Cards = ({
       <h3>Model: {model}</h3>
       <h3>Class: {starship_class}</h3>
       <h3>Number of passengers: {passengers}</h3>
-      <button className="favorites favorite-button">favorite</button>
+      <button className="favorite-btn">favorite</button>
     </article>
   );
 
