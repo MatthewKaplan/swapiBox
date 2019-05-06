@@ -43,9 +43,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header
-          retrieveData={this.retrieveData}
-        />
+        <Header retrieveData={this.retrieveData} />
         {this.handleScrollRender()}
         {this.handleCardRender()}
         <div className="background-style">

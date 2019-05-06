@@ -1,5 +1,6 @@
 import React from "react";
 import "./Scroll.scss";
+import PropTypes from "prop-types";
 
 const Scroll = ({ releaseDate, title, summary }) => {
   return (
@@ -24,3 +25,9 @@ const Scroll = ({ releaseDate, title, summary }) => {
 };
 
 export default Scroll;
+
+Scroll.propTypes = {
+  releaseDate: PropTypes.string,
+  title: PropTypes.string,
+  summary: PropTypes.string
+};

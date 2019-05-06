@@ -22,7 +22,6 @@ const fetchSpecies = people => {
       .then(response => response.json())
       .then(result => {
         const newPerson = { ...person, species: result.name };
-        console.log(newPerson);
         return newPerson;
       });
   });
