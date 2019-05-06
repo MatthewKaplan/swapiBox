@@ -36,10 +36,7 @@ const fetchHomeworld = people => {
         const finishedPerson = {
           ...person,
           homeworld: result.name,
-          population: result.population,
-          imageArr: [
-            "https://www.google.com/search?q=luke+skywalker+transparent&client=firefox-b-1-d&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiO8f7rnobiAhUB0KwKHUtTBOsQ_AUIDigB&biw=2560&bih=1343#imgrc=k2i_e8hLje5otM:"
-          ]
+          population: result.population
         };
         return finishedPerson;
       });

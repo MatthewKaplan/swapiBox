@@ -47,7 +47,7 @@ $scroll-text: hsl(60, 100%, 75%);
   .logo {
     @include scroll;
     animation: logo 9s ease-out 9s;
-    left: 40%;
+    left: 45%;
     margin: auto;
 
     img {
@@ -88,7 +88,7 @@ $scroll-text: hsl(60, 100%, 75%);
     position: absolute;
     text-align: justify;
     transform-origin: 50% 100%;
-    transform: perspective(300px) rotateX(25deg);
+    transform: perspective(300px) rotateX(15deg);
     width: 18em;
 
     &:after {

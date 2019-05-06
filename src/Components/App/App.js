@@ -46,10 +46,6 @@ class App extends Component {
         <Header retrieveData={this.retrieveData} />
         {this.handleScrollRender()}
         {this.handleCardRender()}
-        <div className="background-style">
-          <div className="starfield-left" />
-          <div className="starfield-right" />
-        </div>
       </div>
     );
   }

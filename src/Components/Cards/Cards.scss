@@ -1,3 +1,5 @@
+$scroll-text: hsl(60, 100%, 75%);
+
 article {
   background-color: #221f20;
   border: 1px solid #56C0D4;
@@ -17,4 +19,8 @@ article {
 
 .planetCard {
   overflow: scroll;
+}
+
+span {
+  color: $scroll-text;
 }

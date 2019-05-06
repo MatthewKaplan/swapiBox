@@ -7,13 +7,13 @@ const cleanRandomMovie = data => {
   return movieInfo;
 };
 
-const cleanPeopleData = (data) => {
+const cleanPeopleData = data => {
   const peopleInfo = data.map(person => {
     return {
       name: person.name,
       homeworld: person.homeworld,
       species: person.species,
-      population: person.population.replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      population: person.population.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     };
   });
   return peopleInfo;
