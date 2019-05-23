@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/swapiBox/static/css/main.99938e3e.chunk.css",
+    "main.js": "/swapiBox/static/js/main.d27c70ce.chunk.js",
+    "main.js.map": "/swapiBox/static/js/main.d27c70ce.chunk.js.map",
+    "runtime~main.js": "/swapiBox/static/js/runtime~main.33bac6c8.js",
+    "runtime~main.js.map": "/swapiBox/static/js/runtime~main.33bac6c8.js.map",
+    "static/js/2.d8c91e0c.chunk.js": "/swapiBox/static/js/2.d8c91e0c.chunk.js",
+    "static/js/2.d8c91e0c.chunk.js.map": "/swapiBox/static/js/2.d8c91e0c.chunk.js.map",
+    "index.html": "/swapiBox/index.html",
+    "precache-manifest.a68738b6914731a3355e61740fadae16.js": "/swapiBox/precache-manifest.a68738b6914731a3355e61740fadae16.js",
+    "service-worker.js": "/swapiBox/service-worker.js",
+    "static/css/main.99938e3e.chunk.css.map": "/swapiBox/static/css/main.99938e3e.chunk.css.map",
+    "static/media/logo.svg": "/swapiBox/static/media/logo.37da0be5.svg",
+    "static/media/Header.scss": "/swapiBox/static/media/world.78c8aa6a.svg"
+  }
+}
