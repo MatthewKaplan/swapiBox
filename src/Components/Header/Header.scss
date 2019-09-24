@@ -1,7 +1,7 @@
 @mixin icons {
-  background-position: 100% 50%;
-  background-repeat: no-repeat;
-  background-size: 100px 125px;
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+	background-size: 100px 125px;
 }
 
 $nav-background: hsl(0, 0%, 19%);
@@ -9,72 +9,92 @@ $button-text: hsl(0, 0%, 67%);
 $button-font: 'Ubuntu', sans-serif;
 
 .headerContainer {
-  background-color: $nav-background;
+	background-color: $nav-background;
 
-  .topNav {
-    background-image: url(https://static-mh.content.disney.io/starwars/assets/navigation/sw_logo_horiz@2x-f98247cb30aa.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100px;
-    position: relative;
-  } 
+	.topNav {
+		background-image: url(https://static-mh.content.disney.io/starwars/assets/navigation/sw_logo_horiz@2x-f98247cb30aa.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 100px;
+		position: relative;
+	}
 
-  hr {
-    margin-bottom: 0;
-  }
+	hr {
+		margin-bottom: 0;
+	}
 
-  .buttonContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 80px;
-    justify-content: space-around;
-    margin: 0 250px 0 250px;
+	.buttonContainer {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		height: 80px;
+		justify-content: space-around;
+		margin: 0 250px 0 250px;
+
+		input {
+			background-color: $nav-background;
+			border-color: $button-text;
+			border-style: solid;
+			border-width: 0 1px 0 1px;
+			color: $button-text;
+			cursor: pointer;
+			font-family: $button-font;
+			font-size: 1.05rem;
+			text-align: center;
+
+			&:hover {
+				opacity: .7;
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.people {
+			@include icons;
+			background-image: url('../../assets/star-wars-people.svg');
+
+			&:focus {
+				border-bottom: 3px solid #ffa300;
+			}
+		}
+
+		.vehicles {
+			@include icons;
+			background-image: url('../../assets/millennium-falcon.svg');
+
+			&:focus {
+				border-bottom: 3px solid #00a0ff;
+			}
+		}
+
+		.planets {
+			@include icons;
+			background-image: url('../../assets/world.svg');
+
+			&:focus {
+				border-bottom: 3px solid #80ca90;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.headerContainer .topNav {
+		background-size: 300px 35px;
+	}
+
+	.headerContainer .buttonContainer {
+    margin: 0px;
+    
+    .vehicles,
+    .planets,
+    .people {
+      background-size: 40px 125px;
+    }
 
     input {
-      background-color: $nav-background;
-      border-color: $button-text;
-      border-style: solid;
-      border-width: 0 1px 0 1px;
-      color: $button-text;
-      cursor: pointer;
-      font-family: $button-font;
-      font-size: 1.05rem;
-      text-align: center;
-
-      &:hover {
-        opacity: .7;
-      }
-
-      &:focus {
-        outline: none;
-      }
-    }
-  
-    .people {
-      @include icons;
-      background-image: url('../../assets/star-wars-people.svg');
-
-      &:focus {
-        border-bottom: 3px solid #FFA300;
-      }
-    }
-  
-    .vehicles {
-      @include icons;
-      background-image: url('../../assets/millennium-falcon.svg');
-
-      &:focus {
-        border-bottom: 3px solid #00A0FF;
-      }
-    }
-  
-    .planets {
-      @include icons;
-      background-image: url('../../assets/world.svg');
-
-      &:focus { 
-        border-bottom: 3px solid #80CA90;
-      }
-    }
-  } 
+      text-align: left;
+  }
+	}
 }
