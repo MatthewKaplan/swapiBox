@@ -8,6 +8,8 @@ For this project I made use of the SWAPI Star Wars API to test my React muscle m
 
 [https://MatthewKaplan.github.io/swapiBox](https://MatthewKaplan.github.io/swapiBox)
 
+<br /><br /><br />
+
 ## Preview:
 
 <img src="https://i.imgur.com/8ARLiXx.png" width="900" />
